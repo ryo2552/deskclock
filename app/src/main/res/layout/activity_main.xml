@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
+
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:layout_height="0dp" android:id="@+id/linearLayout2"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" app:layout_constraintBottom_toBottomOf="parent"
+    >
+        <!-- fontPath="fonts/digital_7_mono_italic.ttf" -->
+        <TextClock
+                android:id="@+id/currentDate"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:autoSizeTextType="uniform"
+                app:autoSizeMinTextSize="12sp"
+                android:timeZone="Asia/Tokyo"
+                android:format12Hour="yy.MM.dd [E]"
+                android:format24Hour="yy.MM.dd [E]"
+                android:layout_weight="1.5" android:gravity="bottom"
+                android:textColor="#FFFFFF" android:textColorHint="#FFFFFF" android:text="2019/01/01 (Mon)"
+                android:textSize="130sp"/>
+        <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="0dp" android:layout_weight="2.5" android:gravity="bottom">
+            <TextClock
+                    android:id="@+id/currentTime"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:autoSizeTextType="uniform"
+                    app:autoSizeMinTextSize="12sp"
+                    android:timeZone="Asia/Tokyo"
+                    android:format12Hour="hh:mm"
+                    android:format24Hour="HH:mm"
+                    android:textAlignment="gravity" android:layout_weight="4"
+                    android:textColor="#FFFFFF" android:textColorHint="#FFFFFF" android:text="00:00"
+                    android:includeFontPadding="false"
+                    android:textSize="350sp" android:gravity="bottom|center"
+                    android:layout_marginBottom="-40dp"/>
+            <TextClock
+                    android:id="@+id/currentSec"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:autoSizeTextType="uniform"
+                    app:autoSizeMinTextSize="12sp"
+                    android:timeZone="Asia/Tokyo"
+                    android:format12Hour="ss"
+                    android:format24Hour="ss"
+                    android:textAlignment="gravity" android:layout_weight="1"
+                    android:textColor="#FFFFFF" android:textColorHint="#FFFFFF" android:text="00"
+                    android:textSize="150sp" android:gravity="bottom|left" android:layout_marginBottom="0dp"/>
+        </LinearLayout>
+        <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="@android:color/white"/>
+        <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="0dp" android:layout_weight="1.5" android:gravity="bottom">
+            <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content" app:srcCompat="@drawable/sunny"
+                    android:id="@+id/weatherImage"
+                    android:layout_weight="2.5" android:layout_margin="10dp"/>
+            <!-- <android.support.v7.widget.AppCompatTextView
+                    fontPath="fonts/digital_7_mono_italic.ttf"
+                    android:text="@string/weather"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:autoSizeTextType="uniform"
+                    app:autoSizeMinTextSize="12sp"
+                    android:id="@+id/weather"
+                    android:orientation="horizontal"
+                    android:textAlignment="center"
+                    android:textColor="#FFFFFF"
+                    android:textColorHint="#FFFFFF"
+                    android:textSize="120sp"
+                    android:layout_weight="1.5" android:gravity="bottom"/> -->
+            <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent" app:srcCompat="@drawable/temp" android:id="@+id/temp_icon"
+                    android:layout_weight="0.2"
+                    android:scaleType="fitEnd" android:layout_marginBottom="30dp" android:layout_marginTop="70dp"/>
+            <android.support.v7.widget.AppCompatTextView
+                    android:text="00"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:autoSizeTextType="uniform"
+                    app:autoSizeMinTextSize="12sp"
+                    android:id="@+id/temp"
+                    android:layout_weight="0.85"
+                    android:textSize="130sp"
+                    android:textColor="#FFFFFF"
+                    android:textColorHint="#FFFFFF"
+                    android:gravity="bottom|right"/>
+            <android.support.v7.widget.AppCompatTextView
+                    android:text="℃"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:autoSizeTextType="uniform"
+                    app:autoSizeMinTextSize="12sp"
+                    android:id="@+id/temp_unit" android:layout_weight="0.4"
+                    android:textColor="#FFFFFF" android:textColorHint="#FFFFFF"
+                    android:textSize="80sp"/>
+            <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent" app:srcCompat="@drawable/hum" android:id="@+id/hum_icon"
+                    android:layout_weight="0.2" android:scaleType="fitEnd" android:layout_marginBottom="30dp"
+                    android:layout_marginTop="70dp"/>
+            <android.support.v7.widget.AppCompatTextView
+                    android:text="00"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:autoSizeTextType="uniform"
+                    app:autoSizeMinTextSize="12sp"
+                    android:id="@+id/hum" android:layout_weight="0.85"
+                    android:textColor="#FFFFFF" android:textColorHint="#FFFFFF"
+                    android:textSize="130sp"
+                    android:gravity="bottom|right"/>
+            <android.support.v7.widget.AppCompatTextView
+                    android:text="%"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:autoSizeTextType="uniform"
+                    app:autoSizeMinTextSize="12sp"
+                    android:id="@+id/hum_unit" android:layout_weight="0.4"
+                    android:textColor="#FFFFFF" android:textColorHint="#FFFFFF"
+                    android:textSize="80sp"/>
+        </LinearLayout>
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>
